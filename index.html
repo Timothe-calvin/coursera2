@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlust Explorer | Travel Recommendations</title>
+  <style>
+    :root {
+      --primary: #0077b6;
+      --secondary: #90e0ef;
+      --accent: #ffb703;
+      --light: #f8f9fa;
+      --dark: #023047;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    nav {
+      background: var(--primary);
+      padding: 1em;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+      color: white;
+      padding: 6em 2em;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+    }
+    header p {
+      font-size: 1.3em;
+      max-width: 700px;
+      margin: auto;
+    }
+    #recommendations {
+      padding: 3em 2em;
+      max-width: 1100px;
+      margin: auto;
+    }
+    #recommendations h2 {
+      font-size: 2.5em;
+      color: var(--primary);
+      margin-bottom: 1em;
+    }
+    .recommendation {
+      margin: 2em 0;
+      background: white;
+      border-radius: 12px;
+      padding: 2em;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .recommendation h3 {
+      color: var(--dark);
+      margin-bottom: 0.5em;
+    }
+    .recommendation p {
+      margin-top: 1em;
+      font-size: 1.1em;
+    }
+    .recommendation img {
+      width: 45%;
+      margin: 0.5em;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .recommendation img:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 2em;
+      text-align: center;
+      margin-top: 3em;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Wanderlust Explorer</h1>
+    <p>Your personalized gateway to breathtaking destinations around the globe.  
+       Let us inspire your next adventure with tailored recommendations and insider travel tips.</p>
+  </header>
+
+  <!-- Recommendations -->
+  <section id="recommendations">
+    <h2>Our Top Travel Picks</h2>
+
+    <!-- Beach -->
+    <div class="recommendation">
+      <h3>Beach Getaway</h3>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Sunny tropical beach with palm trees">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&q=80&fm=jpg" alt="Golden sunset on the ocean shore">
+      <p>From crystal-clear waters to vibrant coral reefs, our beach recommendations will leave you relaxed, recharged, and ready for paradise. Perfect for sun seekers, couples, and water sports enthusiasts alike.</p>
+    </div>
+
+    <!-- Temple -->
+    <div class="recommendation">
+      <h3>Temple Journey</h3>
+      <img src="https://images.unsplash.com/photo-1558981359-95f6d1d1b2c4" alt="Ancient temple surrounded by lush greenery">
+      <img src="https://images.unsplash.com/photo-1581235720704-b1e8a58d4d1b" alt="Sunrise over a historic temple">
+      <p>Step back in time as you explore ancient temples and sacred landmarks. Perfect for history buffs, cultural explorers, and those seeking spiritual serenity.</p>
+    </div>
+
+    <!-- Countryside -->
+    <div class="recommendation">
+      <h3>Country Adventure</h3>
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Rolling hills and green fields in the countryside">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Small rural village with cottages">
+      <p>Escape the city noise and embrace simplicity. Our countryside recommendations offer fresh air, charming landscapes, and authentic local experiences that bring peace to the soul.</p>
+    </div>
+
+    <!-- Mountains -->
+    <div class="recommendation">
+      <h3>Mountain Escape</h3>
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Snow-covered mountain peaks under blue sky">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&q=80&fm=jpg" alt="Hiking trail through scenic alpine mountains">
+      <p>Breathe in the crisp mountain air, hike scenic trails, or simply admire snow-capped peaks. These destinations are ideal for adventurers, photographers, and nature lovers alike.</p>
+    </div>
+
+    <!-- City -->
+    <div class="recommendation">
+      <h3>City Exploration</h3>
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="Modern skyline of a busy city at night">
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" alt="Historic old town street with colorful buildings">
+      <p>Immerse yourself in vibrant nightlife, diverse cultures, and world-class dining. Our city picks blend modern excitement with historic charm, offering something for everyone.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Wanderlust Explorer | Designed with ❤️ for passionate travelers</p>
+    <p>
+      <a href="about.html">About Us</a> | 
+      <a href="contact.html">Contact</a> | 
+      <a href="#">Privacy Policy</a>
+    </p>
+  </footer>
+</body>
+</html>
