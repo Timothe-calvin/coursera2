@@ -47,7 +47,7 @@
     }
     header {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
       color: white;
       padding: 6em 2em;
       text-align: center;
@@ -61,6 +61,33 @@
       max-width: 700px;
       margin: auto;
     }
+    /* Search Bar */
+    #searchBar {
+      margin: 2em auto;
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+    }
+    #searchInput {
+      padding: 0.8em;
+      width: 300px;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    #searchButton {
+      padding: 0.8em 1.2em;
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #searchButton:hover {
+      background: #ff9900;
+    }
     #recommendations {
       padding: 3em 2em;
       max-width: 1100px;
@@ -70,6 +97,7 @@
       font-size: 2.5em;
       color: var(--primary);
       margin-bottom: 1em;
+      text-align: center;
     }
     .recommendation {
       margin: 2em 0;
@@ -128,48 +156,64 @@
        Let us inspire your next adventure with tailored recommendations and insider travel tips.</p>
   </header>
 
+  <!-- Search Bar -->
+  <div id="searchBar">
+    <input type="text" id="searchInput" placeholder="Search destinations... (e.g. beach, temple)">
+    <button id="searchButton">Search</button>
+  </div>
+
   <!-- Recommendations -->
   <section id="recommendations">
     <h2>Our Top Travel Picks</h2>
 
     <!-- Beach -->
-    <div class="recommendation">
+    <div class="recommendation" data-keywords="beach ocean sea sun tropical">
       <h3>Beach Getaway</h3>
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Sunny tropical beach with palm trees">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&q=80&fm=jpg" alt="Golden sunset on the ocean shore">
-      <p>From crystal-clear waters to vibrant coral reefs, our beach recommendations will leave you relaxed, recharged, and ready for paradise. Perfect for sun seekers, couples, and water sports enthusiasts alike.</p>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" 
+           alt="Sunny tropical beach with palm trees">
+      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80" 
+           alt="Turquoise waves crashing on sandy beach">
+      <p>From crystal-clear waters to vibrant coral reefs, our beach recommendations will leave you relaxed, recharged, and ready for paradise.</p>
     </div>
 
     <!-- Temple -->
-    <div class="recommendation">
+    <div class="recommendation" data-keywords="temple shrine history culture spirituality">
       <h3>Temple Journey</h3>
-      <img src="https://images.unsplash.com/photo-1558981359-95f6d1d1b2c4" alt="Ancient temple surrounded by lush greenery">
-      <img src="https://images.unsplash.com/photo-1581235720704-b1e8a58d4d1b" alt="Sunrise over a historic temple">
-      <p>Step back in time as you explore ancient temples and sacred landmarks. Perfect for history buffs, cultural explorers, and those seeking spiritual serenity.</p>
+      <img src="https://images.unsplash.com/photo-1563245372-7a8a1f7db7e5?auto=format&fit=crop&w=900&q=80" 
+           alt="Ancient Asian temple surrounded by greenery">
+      <img src="https://images.unsplash.com/photo-1538474705339-76f5d1e20a59?auto=format&fit=crop&w=900&q=80" 
+           alt="Japanese shrine with red torii gate">
+      <p>Step back in time as you explore ancient temples and sacred landmarks. Perfect for history buffs and cultural explorers.</p>
     </div>
 
     <!-- Countryside -->
-    <div class="recommendation">
+    <div class="recommendation" data-keywords="countryside rural village fields nature">
       <h3>Country Adventure</h3>
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Rolling hills and green fields in the countryside">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Small rural village with cottages">
-      <p>Escape the city noise and embrace simplicity. Our countryside recommendations offer fresh air, charming landscapes, and authentic local experiences that bring peace to the soul.</p>
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" 
+           alt="Small rural village with cottages">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" 
+           alt="Rolling green fields and farm landscape">
+      <p>Escape the city noise and embrace simplicity. Enjoy charming landscapes and authentic local experiences.</p>
     </div>
 
     <!-- Mountains -->
-    <div class="recommendation">
+    <div class="recommendation" data-keywords="mountains hiking nature snow adventure">
       <h3>Mountain Escape</h3>
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Snow-covered mountain peaks under blue sky">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&q=80&fm=jpg" alt="Hiking trail through scenic alpine mountains">
-      <p>Breathe in the crisp mountain air, hike scenic trails, or simply admire snow-capped peaks. These destinations are ideal for adventurers, photographers, and nature lovers alike.</p>
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" 
+           alt="Snow-covered mountain peaks under blue sky">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=80" 
+           alt="Rocky mountain landscape with hikers">
+      <p>Breathe in the crisp mountain air, hike scenic trails, and admire stunning snow-capped peaks.</p>
     </div>
 
     <!-- City -->
-    <div class="recommendation">
+    <div class="recommendation" data-keywords="city urban nightlife food culture">
       <h3>City Exploration</h3>
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="Modern skyline of a busy city at night">
-      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" alt="Historic old town street with colorful buildings">
-      <p>Immerse yourself in vibrant nightlife, diverse cultures, and world-class dining. Our city picks blend modern excitement with historic charm, offering something for everyone.</p>
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" 
+           alt="Modern skyline of a busy city at night">
+      <img src="https://images.unsplash.com/photo-1486308510493-aa64833634ef?auto=format&fit=crop&w=900&q=80" 
+           alt="Bustling old town street with lights and people">
+      <p>Immerse yourself in vibrant nightlife, diverse cultures, and world-class dining. The city never sleeps!</p>
     </div>
   </section>
 
@@ -182,5 +226,29 @@
       <a href="#">Privacy Policy</a>
     </p>
   </footer>
+
+  <!-- JavaScript for Search -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+    const recommendations = document.querySelectorAll(".recommendation");
+
+    function filterRecommendations() {
+      const query = searchInput.value.toLowerCase();
+      recommendations.forEach(rec => {
+        const keywords = rec.getAttribute("data-keywords");
+        if (keywords.includes(query) || query === "") {
+          rec.style.display = "block";
+        } else {
+          rec.style.display = "none";
+        }
+      });
+    }
+
+    searchButton.addEventListener("click", filterRecommendations);
+    searchInput.addEventListener("keyup", event => {
+      if (event.key === "Enter") filterRecommendations();
+    });
+  </script>
 </body>
 </html>
