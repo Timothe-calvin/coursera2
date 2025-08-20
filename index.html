@@ -3,252 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wanderlust Explorer | Travel Recommendations</title>
+  <title>Wanderlust Explorer</title>
   <style>
-    :root {
-      --primary: #0077b6;
-      --secondary: #90e0ef;
-      --accent: #ffb703;
-      --light: #f8f9fa;
-      --dark: #023047;
-    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
+      background: #f8f9fa;
+      color: #023047;
     }
     nav {
-      background: var(--primary);
+      background: #0077b6;
       padding: 1em;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      margin: 0;
-      padding: 0;
+      text-align: center;
     }
     nav a {
-      text-decoration: none;
       color: white;
+      margin: 0 1em;
+      text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
     nav a:hover {
-      color: var(--accent);
+      color: #ffb703;
     }
     header {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                   url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
       color: white;
-      padding: 6em 2em;
+      padding: 5em 2em;
       text-align: center;
     }
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
-    }
-    header p {
-      font-size: 1.3em;
-      max-width: 700px;
-      margin: auto;
-    }
-    /* Search Bar */
-    #searchBar {
-      margin: 2em auto;
-      display: flex;
-      justify-content: center;
-      gap: 0.5em;
-    }
-    #searchInput {
+    header h1 { font-size: 3em; margin-bottom: 0.5em; }
+    #search-bar { text-align: center; margin: 2em; }
+    #search-bar input {
       padding: 0.8em;
-      width: 300px;
-      border: 2px solid var(--primary);
+      width: 250px;
       border-radius: 8px;
-      font-size: 1em;
+      border: 2px solid #0077b6;
+      margin-right: 0.5em;
     }
-    #searchButton {
-      padding: 0.8em 1.2em;
+    #search-bar button {
+      padding: 0.8em 1em;
       border: none;
-      background: var(--accent);
-      color: white;
-      font-size: 1em;
       border-radius: 8px;
+      background: #ffb703;
+      color: white;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
     }
-    #searchButton:hover {
-      background: #ff9900;
-    }
-    #recommendations {
-      padding: 3em 2em;
-      max-width: 1100px;
-      margin: auto;
-    }
-    #recommendations h2 {
-      font-size: 2.5em;
-      color: var(--primary);
-      margin-bottom: 1em;
-      text-align: center;
-    }
+    #search-bar button:hover { background: #ff9900; }
+    .recommendations { display: flex; flex-wrap: wrap; justify-content: center; gap: 2em; padding: 2em; }
     .recommendation {
-      margin: 2em 0;
+      width: 300px;
       background: white;
       border-radius: 12px;
-      padding: 2em;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 1em;
       text-align: center;
     }
-    .recommendation h3 {
-      color: var(--dark);
-      margin-bottom: 0.5em;
-    }
-    .recommendation p {
-      margin-top: 1em;
-      font-size: 1.1em;
-    }
-    .recommendation img {
-      width: 45%;
-      margin: 0.5em;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    .recommendation img:hover {
-      transform: scale(1.03);
-    }
+    .recommendation img { width: 100%; border-radius: 8px; margin-bottom: 0.5em; }
     footer {
-      background: var(--dark);
+      background: #023047;
       color: white;
       padding: 2em;
       text-align: center;
       margin-top: 3em;
     }
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 0.5em;
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>Wanderlust Explorer</h1>
-    <p>Your personalized gateway to breathtaking destinations around the globe.  
-       Let us inspire your next adventure with tailored recommendations and insider travel tips.</p>
-  </header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
 
-  <!-- Search Bar -->
-  <div id="searchBar">
-    <input type="text" id="searchInput" placeholder="Search destinations... (e.g. beach, temple)">
-    <button id="searchButton">Search</button>
+<header>
+  <h1>Wanderlust Explorer</h1>
+  <p>Discover your next adventure!</p>
+</header>
+
+<div id="search-bar">
+  <input type="text" id="search-input" placeholder="Search for destinations...">
+  <button id="search-button">Search</button>
+  <button id="clear-button">Clear</button>
+</div>
+
+<div class="recommendations">
+  <!-- Beach -->
+  <div class="recommendation" data-keywords="beach sand sun sea tropical">
+    <h3>Beach Paradise</h3>
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Sandy beach with turquoise water">
+    <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80" alt="Palm trees and ocean sunset">
+    <p>Relax on pristine beaches, soak up the sun, and enjoy tropical waters for the ultimate getaway.</p>
   </div>
 
-  <!-- Recommendations -->
-  <section id="recommendations">
-    <h2>Our Top Travel Picks</h2>
+  <!-- Temple -->
+<div class="recommendation" data-keywords="temple shrine culture spiritual">
+  <h3>Temple Visit</h3>
+  <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80" alt="Ancient temple with stairs">
+  <img src="https://plus.unsplash.com/premium_photo-1692673142063-e1184cb78c0e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dGVtcGxlfGVufDB8fDB8fHww" alt="Traditional shrine surrounded by nature">
+  <p>Explore cultural temples and serene shrines steeped in history and tradition.</p>
+</div>
 
-    <!-- Beach -->
-    <div class="recommendation" data-keywords="beach ocean sea sun tropical">
-      <h3>Beach Getaway</h3>
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" 
-           alt="Sunny tropical beach with palm trees">
-      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80" 
-           alt="Turquoise waves crashing on sandy beach">
-      <p>From crystal-clear waters to vibrant coral reefs, our beach recommendations will leave you relaxed, recharged, and ready for paradise.</p>
-    </div>
+  <!-- City Exploration -->
+  <div class="recommendation" data-keywords="city urban nightlife culture">
+    <h3>City Exploration</h3>
+    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=900&q=80" alt="Modern skyscrapers lit up at night">
+    <img src="https://images.unsplash.com/photo-1597133541155-8f2f9da143a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGVtcGxlfGVufDB8fDB8fHww" alt="Bustling city street with people and neon lights">
+    <p>Experience vibrant nightlife, historical landmarks, and modern architecture. Our city recommendations capture the pulse and energy of urban life.</p>
+  </div>
 
-    <!-- Temple -->
-    <div class="recommendation" data-keywords="temple shrine history culture spirituality">
-      <h3>Temple Journey</h3>
-      <img src="https://images.unsplash.com/photo-1563245372-7a8a1f7db7e5?auto=format&fit=crop&w=900&q=80" 
-           alt="Ancient Asian temple surrounded by greenery">
-      <img src="https://images.unsplash.com/photo-1538474705339-76f5d1e20a59?auto=format&fit=crop&w=900&q=80" 
-           alt="Japanese shrine with red torii gate">
-      <p>Step back in time as you explore ancient temples and sacred landmarks. Perfect for history buffs and cultural explorers.</p>
-    </div>
+  <!-- Mountain Adventure -->
+  <div class="recommendation" data-keywords="mountain hiking trekking adventure">
+    <h3>Mountain Adventure</h3>
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="Snow-capped mountains under a clear sky">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" 
+     alt="Hikers trekking on a scenic mountain trail">
 
-    <!-- Countryside -->
-    <div class="recommendation" data-keywords="countryside rural village fields nature">
-      <h3>Country Adventure</h3>
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" 
-           alt="Small rural village with cottages">
-      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" 
-           alt="Rolling green fields and farm landscape">
-      <p>Escape the city noise and embrace simplicity. Enjoy charming landscapes and authentic local experiences.</p>
-    </div>
 
-    <!-- Mountains -->
-    <div class="recommendation" data-keywords="mountains hiking nature snow adventure">
-      <h3>Mountain Escape</h3>
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" 
-           alt="Snow-covered mountain peaks under blue sky">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=80" 
-           alt="Rocky mountain landscape with hikers">
-      <p>Breathe in the crisp mountain air, hike scenic trails, and admire stunning snow-capped peaks.</p>
-    </div>
+    <p>Embark on thrilling mountain adventures, from hiking and trekking to breathtaking scenic views. Perfect for adventure seekers.</p>
+  </div>
+</div>
 
-    <!-- City -->
-    <div class="recommendation" data-keywords="city urban nightlife food culture">
-      <h3>City Exploration</h3>
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" 
-           alt="Modern skyline of a busy city at night">
-      <img src="https://images.unsplash.com/photo-1486308510493-aa64833634ef?auto=format&fit=crop&w=900&q=80" 
-           alt="Bustling old town street with lights and people">
-      <p>Immerse yourself in vibrant nightlife, diverse cultures, and world-class dining. The city never sleeps!</p>
-    </div>
-  </section>
+<script>
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
+  const clearButton = document.getElementById('clear-button');
+  const recommendations = document.querySelectorAll('.recommendation');
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Wanderlust Explorer | Designed with ❤️ for passionate travelers</p>
-    <p>
-      <a href="about.html">About Us</a> | 
-      <a href="contact.html">Contact</a> | 
-      <a href="#">Privacy Policy</a>
-    </p>
-  </footer>
-
-  <!-- JavaScript for Search -->
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
-    const recommendations = document.querySelectorAll(".recommendation");
-
-    function filterRecommendations() {
-      const query = searchInput.value.toLowerCase();
-      recommendations.forEach(rec => {
-        const keywords = rec.getAttribute("data-keywords");
-        if (keywords.includes(query) || query === "") {
-          rec.style.display = "block";
-        } else {
-          rec.style.display = "none";
-        }
-      });
-    }
-
-    searchButton.addEventListener("click", filterRecommendations);
-    searchInput.addEventListener("keyup", event => {
-      if (event.key === "Enter") filterRecommendations();
+  function filterRecommendations() {
+    const query = searchInput.value.toLowerCase();
+    recommendations.forEach(rec => {
+      const keywords = rec.dataset.keywords.toLowerCase();
+      rec.style.display = keywords.includes(query) ? 'block' : 'none';
     });
-  </script>
+  }
+
+  searchButton.addEventListener('click', filterRecommendations);
+
+  searchInput.addEventListener('keyup', e => {
+    if (e.key === 'Enter') filterRecommendations();
+  });
+
+  clearButton.addEventListener('click', () => {
+    searchInput.value = '';
+    recommendations.forEach(rec => rec.style.display = 'block');
+  });
+</script>
+
+<footer>
+  <p>© 2025 Wanderlust Explorer | Designed with ❤️ for passionate travelers</p>
+</footer>
+
 </body>
 </html>
